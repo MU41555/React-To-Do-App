@@ -13,6 +13,12 @@ function Todo() {
         setlist("");
     }
 
+    // const deleteAll = () => {
+    //     setitem((myItem) => {
+    //         return remove()
+    //     })
+    // }
+
     const deleteItem = (id) => {
         setitem((myItem) => {
             return myItem.filter((arr, i) => {
@@ -20,6 +26,17 @@ function Todo() {
             })
         })
     }
+
+    // const editItem = (id) => {
+    //     this.setitem((myItem) => {
+    //         return myItem.filter((arr, i) => {
+    //             return i == id;
+    //         })
+    //     })
+    //     console.log("editItem");
+    // }
+
+
     return (
         <>
             <div className="container-fluid my-5">
@@ -33,11 +50,11 @@ function Todo() {
                             <div className="col-1">
                                 <button className="btn btn-warning px-" onClick={addlist}><i className="fas fa-plus bg-warning fs-5"></i></button>
                             </div>
-                            <div className="col-1">
-                                <button className="btn btn-warning px- "><i className="fas fa-trash-alt bg-warning fs-5"></i></button>
-                            </div>
+                            {/* <div className="col-1">
+                                <button className="btn btn-warning px- " ><i className="fas fa-trash-alt bg-warning fs-5"></i></button>
+                            </div> */}
                             <div className="container-fluid">
-                                <ul className="list-unstyled row m-5">
+                                <ul className="list-unstyled row m-5 ">
                                     {item.map((itemAdd, index) => {
                                         return <MyPlan key={index} id={index} delete={deleteItem} text={itemAdd} />
                                     })
